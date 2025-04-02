@@ -1,0 +1,63 @@
+.container {
+    padding-top: 120px;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.details {
+    width: 480px;
+    margin-inline: auto;
+}
+
+.summary {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    background: #0099ff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0.5em;
+    position: relative;
+}
+
+.summary::before,
+.summary::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    /* transform: translateY(-50%); */
+    background: #fff;
+}
+
+.summary::before {
+    width: 16px;
+    height: 2px;
+    right: 9px;
+}
+
+.summary::after {
+    width: 2px;
+    height: 16px;
+    right: 16px;
+    transition: rotate 0.3s;
+}
+
+.details[open] .summary::after {
+    /* transform: rotate(90deg); */
+    rotate: 90deg;
+}
+
+.content-box {
+    overflow: hidden;
+}
+
+.answer {
+    padding: 10px;
+    background: #eee;
+}
